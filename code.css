@@ -1,0 +1,227 @@
+/* --- Global Reset & Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.6;
+    background-color: #f4f6f8; /* Light, neutral background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top for scroll */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+}
+
+/* --- Typography --- */
+header h1 {
+    color: #2c3e50; /* Dark blue-grey */
+    font-size: 2em;
+    margin-bottom: 0.25em;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    color: #555;
+    margin-bottom: 1.5em;
+    font-size: 1em;
+}
+
+/* --- Screen Reader Only Text --- */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* --- Input Area --- */
+.input-area textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #d1d5db; /* Light grey border */
+    border-radius: 8px;
+    font-size: 1.05em;
+    font-family: inherit;
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 120px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-area textarea:focus {
+    outline: none;
+    border-color: #007bff; /* Primary color focus */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* --- Controls Area --- */
+.controls-area {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.voice-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.voice-selection label {
+    font-weight: 500;
+    color: #454545;
+}
+
+.voice-selection select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.95em;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.voice-selection select:disabled {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+.voice-selection select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+
+/* --- Buttons --- */
+.button-primary, .button-secondary {
+    padding: 12px 20px;
+    font-size: 1em;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.button-primary:focus-visible, .button-secondary:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.35);
+}
+
+.button-primary {
+    background-color: #007bff; /* Primary blue */
+    color: white;
+}
+.button-primary:hover:not(:disabled) {
+    background-color: #0056b3; /* Darker blue */
+}
+.button-primary:active:not(:disabled) {
+    transform: translateY(1px);
+}
+.button-primary:disabled {
+    background-color: #a0c7e4;
+    cursor: not-allowed;
+}
+
+.button-secondary {
+    background-color: #6c757d; /* Grey for secondary actions */
+    color: white;
+}
+.button-secondary:hover:not(:disabled) {
+    background-color: #545b62;
+}
+.button-secondary:active:not(:disabled) {
+    transform: translateY(1px);
+}
+.button-secondary:disabled {
+    background-color: #adb5bd;
+    cursor: not-allowed;
+}
+
+
+/* --- Status Area --- */
+.status-area {
+    margin-top: 20px;
+    min-height: 1.5em; /* Reserve space for messages */
+}
+
+#status-message {
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    text-align: center;
+}
+#status-message.success {
+    background-color: #d4edda; /* Light green */
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+#status-message.error {
+    background-color: #f8d7da; /* Light red */
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+#status-message.info {
+    background-color: #cce5ff; /* Light blue */
+    color: #004085;
+    border: 1px solid #b8daff;
+}
+
+
+/* --- Footer --- */
+footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.85em;
+    color: #6c757d; /* Grey text */
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef; /* Light separator */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    .container {
+        padding: 20px;
+    }
+    header h1 {
+        font-size: 1.8em;
+    }
+    .subtitle {
+        font-size: 0.95em;
+    }
+    .button-primary, .button-secondary {
+        font-size: 0.95em;
+        padding: 10px 15px;
+    }
+    .input-area textarea {
+        font-size: 1em;
+    }
+}

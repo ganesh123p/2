@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>తెలుగు వాక్య ఉచ్చారణ (Telugu Text-to-Speech)</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Consider adding a favicon here -->
+    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>తెలుగు వాక్య ఉచ్చారణ</h1>
+            <p class="subtitle">మీ తెలుగు వచనాన్ని సులభంగా ప్రసంగంలోకి మార్చండి</p>
+        </header>
+
+        <main id="tts-app">
+            <section class="input-area" aria-labelledby="input-heading">
+                <h2 id="input-heading" class="sr-only">Text Input</h2>
+                <textarea id="text-to-speak" rows="8" placeholder="ఇక్కడ మీ తెలుగు వచనాన్ని టైప్ చేయండి లేదా అతికించండి..." aria-label="Telugu text to convert to speech"></textarea>
+            </section>
+
+            <section class="controls-area" aria-labelledby="controls-heading">
+                <h2 id="controls-heading" class="sr-only">Speech Controls</h2>
+                <div class="voice-selection">
+                    <label for="voice-select">స్వరం ఎంచుకోండి:</label>
+                    <select id="voice-select" aria-label="Select speech voice"></select>
+                </div>
+                <button id="speak-button" class="button-primary" type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20" style="margin-right: 8px;" aria-hidden="true">
+                        <path d="M7 9V15H11L16 20V4L11 9H7ZM18.5 12C18.5 10.23 17.54 8.71 16 7.97V16.02C17.54 15.29 18.5 13.77 18.5 12ZM16 0V2.06C19.89 2.95 23 6.69 23 11C23 15.31 19.89 19.05 16 19.94V22C21.02 21.09 25 16.5 25 11C25 5.5 21.02 0.91 16 0Z"/>
+                    </svg>
+                    మాట్లాడండి
+                </button>
+                 <button id="stop-button" class="button-secondary" type="button" style="display:none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20" style="margin-right: 8px;" aria-hidden="true">
+                        <path d="M6 6H18V18H6V6Z" />
+                    </svg>
+                    ఆపు
+                </button>
+            </section>
+
+            <section class="status-area" aria-live="polite">
+                <p id="status-message"></p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; <span id="current-year"></span>. మీ తెలుగు TTS అప్లికేషన్. GitHub Pagesలో ఉచితంగా హోస్ట్ చేయబడింది.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
